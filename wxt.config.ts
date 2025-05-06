@@ -2,7 +2,7 @@ import { defineConfig } from 'wxt';
 
 export default defineConfig({
   srcDir: 'src',
-  entrypointsDir: 'src',
+  entrypointsDir: 'entrypoints',
   manifest: {
     manifest_version: 3,
     name: 'Glass Tilt Game',
@@ -14,15 +14,5 @@ export default defineConfig({
       '128': '/icons/icon-128.png',
     },
     host_permissions: ['https://*.hey.xyz/*'],
-  },
-  contentScripts: [
-    {
-      matches: ['https://*.hey.xyz/*'],
-      main: 'content_scripts/tilt-button.ts',
-      runAt: 'document_idle',
-    },
-  ],
-  background: {
-    serviceWorker: 'background_scripts/background.ts',
-  },
+  }
 });
