@@ -23,7 +23,6 @@
       "https://*.hey.xyz/*"
     ],
     "background": {
-       "service_worker": "src/background_scripts/background.ts",
-       "type": "module"
-     }
+      "scripts": ["src/background_scripts/background.ts"]
+    }
   }
