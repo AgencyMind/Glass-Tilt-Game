@@ -1,4 +1,4 @@
-import browser from 'webextension-polyfill';
+import { browser } from 'wxt/browser';
 const BUTTON_ID = 'glass-tilt-game-sidebar-button';
 const SIDEBAR_CONTAINER_SELECTOR = 'main#_hey_ aside';
 const PROFILE_BUTTON_SELECTOR = 'div[data-headlessui-state] > button';

@@ -1,4 +1,4 @@
-import browser from 'webextension-polyfill';
+import { browser } from 'wxt/browser';
 
 function onInstalledHandler(details: browser.runtime.OnInstalledDetailsType): void {
   console.log('Glass Tilt Game: Background script installed/updated.', details);

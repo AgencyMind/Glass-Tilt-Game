@@ -1,27 +1,30 @@
 {
-    "compilerOptions": {
-      "strict": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "noFallthroughCasesInSwitch": true,
-      "noImplicitReturns": true,
-      "forceConsistentCasingInFileNames": true,
-      "module": "ESNext",
-      "moduleResolution": "Bundler",
-      "resolveJsonModule": true,
-      "noEmit": true,
-      "isolatedModules": true,
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "target": "ESNext",
-      "lib": ["ESNext", "DOM", "DOM.Iterable"],
-      "skipLibCheck": true,
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["src/*"]
-      },
-      "types": ["vite/client", "node", "webextension-polyfill"]
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "vite.config.ts"],
-    "exclude": ["node_modules", "dist", "**/__tests__/*"]
-  }
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "wxt.config.ts",
+    ".wxt/types/**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", ".wxt/dist", "**/__tests__/*"]
+}
