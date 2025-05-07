@@ -1,4 +1,5 @@
 import { defineConfig } from 'wxt';
+import path from 'node:path';
 
 export default defineConfig({
   srcDir: 'src',
@@ -14,5 +15,8 @@ export default defineConfig({
       '128': '/icons/icon-128.png',
     },
     host_permissions: ['https://*.hey.xyz/*'],
-  }
+  },
+  alias: {
+    '@': path.resolve(process.cwd(), './src'),
+  },
 });
