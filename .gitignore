@@ -1,6 +1,9 @@
 node_modules/
 dist/
 .wxt/
+dev/
+.output/
+
 
 npm-debug.log*
 yarn-debug.log*

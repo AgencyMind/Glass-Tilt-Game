@@ -6,11 +6,11 @@
   "scripts": {
     "clean": "rimraf .wxt .output dist",
     "lint": "eslint . --ext .ts && tsc --noEmit",
-    "dev": "wxt dev",
-    "build": "wxt build",
-    "zip": "wxt zip",
-    "watch": "wxt dev",
-    "start:firefox": "wxt dev --browser=firefox"
+    "prepare": "npx wxt prepare --config \"%cd%/wxt.config.ts\"",
+    "dev": "npx wxt dev --config \"%cd%/wxt.config.ts\"",
+    "watch": "npx wxt dev --config \"%cd%/wxt.config.ts\"",
+    "build": "npx wxt build --config \"%cd%/wxt.config.ts\"",
+    "zip": "npx wxt zip --config \"%cd%/wxt.config.ts\""
   },
   "devDependencies": {
     "@types/node": "^22.15.13",

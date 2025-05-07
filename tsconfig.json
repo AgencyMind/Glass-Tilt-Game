@@ -16,9 +16,7 @@
       "@/*": ["src/*"]
     },
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
   "include": [
     "src/**/*.ts",
@@ -26,5 +24,5 @@
     "wxt.config.ts",
     ".wxt/types/**/*.d.ts"
   ],
-  "exclude": ["node_modules", "dist", ".wxt/dist", "**/__tests__/*"]
+  "exclude": ["node_modules", "dist", ".wxt/**", "**/__tests__/*"]
 }

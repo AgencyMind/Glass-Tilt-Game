@@ -1,13 +1,18 @@
 import { browser } from 'wxt/browser';
+import { defineBackground } from 'wxt/utils/define-background';
 
-function onInstalledHandler(details: browser.runtime.OnInstalledDetailsType): void {
-  console.log('Glass Tilt Game: Background script installed/updated.', details);
-}
+export default defineBackground(() => {
+  browser.runtime.onInstalled.addListener(details => {
+    console.log('Glass Tilt Game installed/updated.', details);
+  });
 
-function initializeBackgroundScript(): void {
-  console.log('Glass Tilt Game: Initializing background script...');
-  browser.runtime.onInstalled.addListener(onInstalledHandler);
-  console.log('Glass Tilt Game: Background script ready.');
-}
-
-initializeBackgroundScript();
+  browser.runtime.onMessage.addListener(async (message, sender) => {
+    if (
+      message.action === 'navigateToPost' &&
+      sender.tab?.id &&
+      typeof message.url === 'string'
+    ) {
+      await browser.tabs.update(sender.tab.id, { url: message.url });
+    }
+  });
+});
